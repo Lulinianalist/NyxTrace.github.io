@@ -78,3 +78,8 @@ Dal registro pacchetti si evidenzia:
 
 ## 👤 Autore
 Lulinianalist – Portfolio Cybersecurity
+## 📁 File allegati
+
+| File | Descrizione |
+|------|-------------|
+| [log_tcp_syn_flood.xlsx](log_tcp_syn_flood.xlsx) | Log dell'attacco analizzati con Wireshark. Evidenziano il numero anomalo di richieste SYN dall'indirizzo IP sconosciuto. |
