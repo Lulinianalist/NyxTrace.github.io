@@ -9,21 +9,43 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* Sfondo Matrix animato */
         body {
-            background: #0a0a0f;
+            background: black;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: #e0e0e0;
             line-height: 1.6;
             padding: 2rem 1rem;
+            position: relative;
+            min-height: 100vh;
         }
+
+        /* Canvas per lo sfondo Matrix */
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.25;
+        }
+
+        /* Contenuto sopra lo sfondo */
         .container {
             max-width: 1100px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(0px);
         }
+
         header {
             text-align: center;
             margin-bottom: 3rem;
         }
+
         h1 {
             font-size: 2.5rem;
             background: linear-gradient(135deg, #00ff88, #00cc6a);
@@ -32,6 +54,7 @@
             color: transparent;
             margin-bottom: 0.5rem;
         }
+
         .badge {
             display: inline-block;
             background: #00ff8822;
@@ -42,75 +65,92 @@
             font-size: 0.8rem;
             margin-top: 0.5rem;
         }
+
         .section {
-            background: #111118;
+            background: #111118cc;
+            backdrop-filter: blur(5px);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2rem;
-            border: 1px solid #222230;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid #00ff8844;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
+
         .section h2 {
             color: #00ff88;
             border-left: 4px solid #00ff88;
             padding-left: 1rem;
             margin-bottom: 1.5rem;
         }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
+
         .project-card {
-            background: #0d0d14;
+            background: #0d0d14cc;
+            backdrop-filter: blur(4px);
             border-radius: 15px;
             padding: 1.5rem;
-            border: 1px solid #222230;
+            border: 1px solid #00ff8844;
             transition: transform 0.2s, border-color 0.2s;
         }
+
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: #00ff8855;
+            border-color: #00ff88;
+            background: #0d0d14dd;
         }
+
         .project-card h3 {
             color: #00ff88;
             margin-bottom: 0.5rem;
         }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 0.6rem;
         }
+
         .skill {
-            background: #1a1a24;
+            background: #1a1a24cc;
             padding: 0.4rem 1rem;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 500;
             color: #00ff88;
             border: 1px solid #00ff8822;
+            backdrop-filter: blur(2px);
         }
+
         .contact-links {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
+
         .contact-links a {
             color: #e0e0e0;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
         }
+
         .contact-links a:hover {
             color: #00ff88;
         }
+
         footer {
             text-align: center;
             margin-top: 2rem;
             color: #6c757d;
             font-size: 0.85rem;
         }
+
         .status-badge {
             display: inline-block;
             background: #00ff8822;
@@ -120,6 +160,7 @@
             border-radius: 20px;
             margin-top: 0.8rem;
         }
+
         @media (max-width: 768px) {
             h1 { font-size: 1.8rem; }
             .section { padding: 1.5rem; }
@@ -127,6 +168,10 @@
     </style>
 </head>
 <body>
+
+    <!-- Canvas per l'effetto Matrix -->
+    <canvas id="matrix-bg"></canvas>
+
     <div class="container">
         <header>
             <h1>🛡️ Ciao, sono Lulinianalist</h1>
@@ -177,5 +222,48 @@
             🛡️ Portfolio in aggiornamento — nuovi progetti e threat analysis ogni settimana
         </footer>
     </div>
+
+    <script>
+        // Effetto Matrix Rain
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = Math.random() * -100;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
