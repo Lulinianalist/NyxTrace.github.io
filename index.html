@@ -11,16 +11,16 @@
         }
 
         body {
-            background: #05050a;
-            font-family: 'Segoe UI', 'Courier New', monospace;
-            color: #e2e8f0;
+            background: #0a0a0f;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            color: #e0e0e0;
             line-height: 1.6;
             padding: 2rem 1rem;
             position: relative;
             min-height: 100vh;
         }
 
-        /* Matrix notturno */
+        /* Sfondo Matrix (solo visivo, nessun filtro) */
         #matrix-bg {
             position: fixed;
             top: 0;
@@ -28,7 +28,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            opacity: 0.2;
+            opacity: 0.15;
         }
 
         .container {
@@ -45,7 +45,7 @@
 
         h1 {
             font-size: 2.5rem;
-            background: linear-gradient(135deg, #cbd5e1, #38bdf8, #94a3b8);
+            background: linear-gradient(135deg, #c084fc, #a855f7, #7e22ce);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -53,37 +53,34 @@
             border-bottom: 3px solid #dc2626;
             display: inline-block;
             padding-bottom: 0.3rem;
-            letter-spacing: 2px;
         }
 
         .badge {
             display: inline-block;
-            background: #1e293b66;
-            color: #94a3b8;
-            border: 1px solid #38bdf844;
+            background: #7e22ce22;
+            color: #c084fc;
+            border: 1px solid #a855f744;
             padding: 0.3rem 1rem;
             border-radius: 30px;
             font-size: 0.8rem;
             margin-top: 0.5rem;
-            backdrop-filter: blur(4px);
         }
 
         .section {
-            background: #0f172acc;
-            backdrop-filter: blur(5px);
+            background: #111118;
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2rem;
-            border: 1px solid #1e293b;
+            border: 1px solid #7e22ce44;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .section h2 {
-            font-size: 1.8rem;
-            color: #38bdf8;
+            color: #c084fc;
             border-left: 4px solid #dc2626;
             padding-left: 1rem;
             margin-bottom: 1.5rem;
-            font-weight: 500;
+            font-size: 1.6rem;
         }
 
         .projects-grid {
@@ -93,11 +90,10 @@
         }
 
         .project-card {
-            background: #0f172a99;
-            backdrop-filter: blur(4px);
+            background: #0d0d14;
             border-radius: 15px;
             padding: 1.5rem;
-            border: 1px solid #1e293b;
+            border: 1px solid #7e22ce44;
             transition: transform 0.2s, border-color 0.2s;
         }
 
@@ -107,16 +103,9 @@
         }
 
         .project-card h3 {
-            font-size: 1.3rem;
-            color: #94a3b8;
+            color: #c084fc;
             margin-bottom: 0.5rem;
-            border-left: 2px solid #dc2626;
-            padding-left: 0.6rem;
-        }
-
-        .project-card p {
-            margin: 0.5rem 0;
-            color: #cbd5e1;
+            font-size: 1.3rem;
         }
 
         .skills {
@@ -126,14 +115,13 @@
         }
 
         .skill {
-            background: #1e293b66;
+            background: #1a1a24;
             padding: 0.4rem 1rem;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 500;
-            color: #94a3b8;
-            border: 0.5px solid #38bdf844;
-            backdrop-filter: blur(2px);
+            color: #c084fc;
+            border: 1px solid #a855f744;
         }
 
         .contact-links {
@@ -144,39 +132,40 @@
         }
 
         .contact-links a {
-            color: #94a3b8;
+            color: #e0e0e0;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+            background: #1a1a24;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            border: 1px solid #7e22ce44;
         }
 
         .contact-links a:hover {
             color: #dc2626;
-            background: #dc262611;
+            border-color: #dc2626;
         }
 
         footer {
             text-align: center;
             margin-top: 2rem;
-            color: #475569;
-            font-size: 0.8rem;
+            color: #6c757d;
+            font-size: 0.85rem;
         }
 
         .status-badge {
             display: inline-block;
-            background: #1e293b66;
-            color: #38bdf8;
+            background: #7e22ce22;
+            color: #c084fc;
             font-size: 0.7rem;
             padding: 0.2rem 0.6rem;
             border-radius: 20px;
             margin-top: 0.8rem;
-            border: 0.5px solid #38bdf844;
         }
 
         a {
-            color: #94a3b8;
+            color: #c084fc;
             text-decoration: none;
         }
 
@@ -187,7 +176,7 @@
         @media (max-width: 768px) {
             h1 { font-size: 1.8rem; }
             .section { padding: 1.5rem; }
-            .section h2 { font-size: 1.4rem; }
+            .section h2 { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -242,7 +231,7 @@
         </div>
 
         <footer>
-            🌙 NyxTrace — Portfolio in aggiornamento, nuove threat analysis in arrivo
+            🌙 NyxTrace — Portfolio in aggiornamento | Threat analysis in arrivo
         </footer>
     </div>
 
@@ -250,22 +239,30 @@
         const canvas = document.getElementById('matrix-bg');
         const ctx = canvas.getContext('2d');
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
 
         const letters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         const fontSize = 14;
-        const columns = canvas.width / fontSize;
+        let columns = Math.floor(canvas.width / fontSize);
+        let drops = [];
 
-        const drops = [];
-        for (let x = 0; x < columns; x++) {
-            drops[x] = Math.random() * -100;
+        function initDrops() {
+            columns = Math.floor(canvas.width / fontSize);
+            drops = [];
+            for (let x = 0; x < columns; x++) {
+                drops[x] = Math.random() * -100;
+            }
         }
+        initDrops();
 
         function draw() {
-            ctx.fillStyle = 'rgba(5, 5, 10, 0.08)';
+            ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1e3a8a';
+            ctx.fillStyle = '#7e22ce';
             ctx.font = fontSize + 'px monospace';
 
             for (let i = 0; i < drops.length; i++) {
@@ -280,8 +277,8 @@
 
         setInterval(draw, 35);
         window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            resizeCanvas();
+            initDrops();
         });
     </script>
 </body>
