@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Lulinianalist | Cybersecurity Analyst</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    
     <style>
         * {
             margin: 0;
@@ -16,7 +12,7 @@
 
         body {
             background: black;
-            font-family: 'Share Tech Mono', 'Courier New', monospace;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
             color: #e0e0e0;
             line-height: 1.6;
             padding: 2rem 1rem;
@@ -24,7 +20,6 @@
             min-height: 100vh;
         }
 
-        /* Sfondo Matrix */
         #matrix-bg {
             position: fixed;
             top: 0;
@@ -42,22 +37,18 @@
             z-index: 1;
         }
 
-        /* HEADER */
         header {
             text-align: center;
             margin-bottom: 3rem;
         }
 
         h1 {
-            font-family: 'Orbitron', monospace;
             font-size: 2.5rem;
-            font-weight: 700;
             background: linear-gradient(135deg, #00ff88, #00cc6a);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin-bottom: 0.5rem;
-            /* BORDO ROSSO SOTTO */
             border-bottom: 3px solid #ff3333;
             display: inline-block;
             padding-bottom: 0.3rem;
@@ -72,10 +63,8 @@
             border-radius: 30px;
             font-size: 0.8rem;
             margin-top: 0.5rem;
-            font-family: 'Share Tech Mono', monospace;
         }
 
-        /* SEZIONI */
         .section {
             background: #111118cc;
             backdrop-filter: blur(5px);
@@ -83,15 +72,12 @@
             padding: 2rem;
             margin-bottom: 2rem;
             border: 1px solid #00ff8844;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .section h2 {
-            font-family: 'Orbitron', monospace;
             font-size: 1.8rem;
-            font-weight: 600;
             color: #00ff88;
-            border-left: 4px solid #ff3333;  /* BORDO ROSSO A SINISTRA */
+            border-left: 4px solid #ff3333;
             padding-left: 1rem;
             margin-bottom: 1.5rem;
         }
@@ -114,16 +100,18 @@
         .project-card:hover {
             transform: translateY(-5px);
             border-color: #ff3333;
-            background: #0d0d14dd;
         }
 
         .project-card h3 {
-            font-family: 'Orbitron', monospace;
             font-size: 1.3rem;
             color: #00ff88;
             margin-bottom: 0.5rem;
             border-left: 2px solid #ff3333;
             padding-left: 0.6rem;
+        }
+
+        .project-card p {
+            margin: 0.5rem 0;
         }
 
         .skills {
@@ -140,8 +128,6 @@
             font-weight: 500;
             color: #00ff88;
             border: 1px solid #00ff8822;
-            backdrop-filter: blur(2px);
-            font-family: 'Share Tech Mono', monospace;
         }
 
         .contact-links {
@@ -156,7 +142,6 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
-            font-family: 'Share Tech Mono', monospace;
         }
 
         .contact-links a:hover {
@@ -178,6 +163,15 @@
             padding: 0.2rem 0.6rem;
             border-radius: 20px;
             margin-top: 0.8rem;
+        }
+
+        a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff3333;
         }
 
         @media (max-width: 768px) {
@@ -203,13 +197,13 @@
                 <div class="project-card">
                     <h3>🛡️ Analisi SYN Flood (DoS)</h3>
                     <p>Analisi attacco DoS tramite flood di pacchetti SYN. Identificazione traffico malevolo, impatto sul server web e misure di mitigazione.</p>
-                    <a href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/syn-flood" target="_blank" style="display: inline-block; margin-top: 1rem; color: #00ff88; text-decoration: none; font-size: 0.85rem;">🔗 Vedi progetto completo →</a>
+                    <a href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/syn-flood" target="_blank">🔗 Vedi progetto completo →</a>
                     <div class="status-badge">📌 Completato</div>
                 </div>
                 <div class="project-card">
                     <h3>📡 Analisi errore DNS (ICMP port unreachable)</h3>
                     <p>Analisi log tcpdump: client prova a contattare server DNS sulla porta 53, server risponde con ICMP "port unreachable".</p>
-                    <a href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/dns-icmp-error" target="_blank" style="display: inline-block; margin-top: 1rem; color: #00ff88; text-decoration: none; font-size: 0.85rem;">🔗 Vedi progetto completo →</a>
+                    <a href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/dns-icmp-error" target="_blank">🔗 Vedi progetto completo →</a>
                     <div class="status-badge">📌 Completato</div>
                 </div>
             </div>
