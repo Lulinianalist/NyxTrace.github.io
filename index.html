@@ -4,125 +4,254 @@
     <meta charset="UTF-8">
     <title>Lulinianalist | Cybersecurity Analyst</title>
     <style>
-        body {
+        * {
             margin: 0;
-            padding: 2rem;
-            font-family: system-ui, -apple-system, sans-serif;
-            background: #0a0a0f;
-            color: #e0e0e0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, #0a0f1e, #03050b);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            color: #eef5ff;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
+            backdrop-filter: blur(2px);
         }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
         h1 {
-            color: #00ff88;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #aaffdd, #33ffcc, #00cc99);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
         }
+
         .badge {
-            background: #00ff8822;
-            color: #00ff88;
             display: inline-block;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
+            background: rgba(0, 255, 200, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 255, 200, 0.3);
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.75rem;
+            color: #bbffe8;
         }
+
+        /* Sezioni */
+        .section {
+            background: rgba(15, 25, 45, 0.55);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 2rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(0, 255, 200, 0.2);
+            transition: 0.2s;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-left: 5px solid #33ffcc;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            color: #ccfff0;
+        }
+
+        /* Griglia progetti */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
         .card {
-            background: #111118;
-            border-radius: 20px;
+            background: rgba(10, 18, 28, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #222;
+            border: 1px solid rgba(51, 255, 204, 0.25);
+            transition: all 0.25s;
         }
+
+        .card:hover {
+            border-color: #33ffcc;
+            transform: translateY(-4px);
+            background: rgba(15, 25, 45, 0.85);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
+        }
+
         .card h3 {
-            color: #00ff88;
-            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #88ffdd;
         }
+
+        .card p {
+            color: #cdedff;
+            margin-bottom: 1.2rem;
+            line-height: 1.45;
+        }
+
         .btn {
             display: inline-block;
-            margin-top: 1rem;
-            color: #00ff88;
+            background: rgba(51, 255, 204, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            color: #88ffdd;
             text-decoration: none;
             font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(51, 255, 204, 0.3);
+            transition: 0.2s;
         }
+
+        .btn:hover {
+            background: #33ffcc22;
+            border-color: #33ffcc;
+            color: white;
+        }
+
         .badge-small {
             display: inline-block;
-            background: #00ff8822;
-            color: #00ff88;
-            font-size: 0.7rem;
-            padding: 0.2rem 0.6rem;
+            background: #00cc8822;
+            padding: 0.2rem 0.8rem;
             border-radius: 20px;
-            margin-top: 0.8rem;
+            font-size: 0.7rem;
+            margin-left: 0.8rem;
+            color: #88ffdd;
+            border: 0.5px solid #33ffcc88;
         }
+
+        /* Competenze */
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 1rem;
+            margin-top: 0.5rem;
         }
+
         .skill {
-            background: #1a1a24;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            color: #00ff88;
+            background: rgba(0, 200, 150, 0.08);
+            border: 1px solid rgba(51, 255, 204, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(4px);
         }
+
+        /* Contatti */
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .contact-links a {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #ccfff0;
+            font-weight: 500;
+            border: 0.5px solid rgba(51, 255, 204, 0.3);
+            transition: 0.2s;
+        }
+
+        .contact-links a:hover {
+            background: #33ffcc22;
+            border-color: #33ffcc;
+            color: white;
+        }
+
         footer {
             text-align: center;
             margin-top: 2rem;
-            color: #666;
             font-size: 0.8rem;
+            color: #6688aa;
+            border-top: 0.5px solid rgba(51, 255, 204, 0.2);
+            padding-top: 1.8rem;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>🛡️ Ciao, sono Lulinianalist</h1>
-    <div class="badge">🔒 Cybersecurity Analyst | Network Security | Threat Detection</div>
+    <header>
+        <h1>🛡️ Ciao, sono Lulinianalist</h1>
+        <div class="badge">🔒 Cybersecurity Analyst | Network Security | Threat Detection</div>
+    </header>
 
-    <h2 style="margin-top: 2rem;">📁 Progetti</h2>
-
-    <div class="projects-grid">
-    <div class="card">
-        <h3>🛡️ Analisi SYN Flood (DoS)</h3>
-        <p>Analisi attacco DoS tramite flood di pacchetti SYN. Identificazione traffico malevolo, impatto sul server web e misure di mitigazione.</p>
-        <a class="btn" href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/syn-flood" target="_blank">🔗 Vedi progetto completo →</a>
-        <div class="badge-small">📌 Completato</div>
+    <div class="section">
+        <h2>📁 Progetti</h2>
+        <div class="projects-grid">
+            <div class="card">
+                <h3>🛡️ SYN Flood (DoS)</h3>
+                <p>Analisi attacco DoS tramite flood SYN. Identificazione traffico malevolo, impatto sul server web e mitigazione.</p>
+                <a class="btn" href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/syn-flood" target="_blank">🔗 Vedi progetto →</a>
+                <span class="badge-small">✅ Completato</span>
+            </div>
+            <div class="card">
+                <h3>📡 DNS + ICMP error</h3>
+                <p>Analisi log tcpdump: client prova DNS su porta 53, server risponde "port unreachable". Diagnostica completa.</p>
+                <a class="btn" href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/dns-icmp-error" target="_blank">🔗 Vedi progetto →</a>
+                <span class="badge-small">✅ Completato</span>
+            </div>
+        </div>
     </div>
 
-    <div class="card">
-        <h3>📡 Analisi errore DNS (ICMP port unreachable)</h3>
-        <p>Analisi log tcpdump: client prova a contattare server DNS sulla porta 53, server risponde con ICMP "port unreachable". Identificazione del problema di connettività.</p>
-        <a class="btn" href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/dns-icmp-error" target="_blank">🔗 Vedi progetto completo →</a>
-        <div class="badge-small">📌 Completato</div>
+    <div class="section">
+        <h2>🛠 Competenze</h2>
+        <div class="skills">
+            <span class="skill">Wireshark</span>
+            <span class="skill">Python</span>
+            <span class="skill">Linux/iptables</span>
+            <span class="skill">TCP/IP</span>
+            <span class="skill">IDS/IPS</span>
+            <span class="skill">Log Analysis</span>
+        </div>
     </div>
 
-
-    <div class="card">
-        <h3>📊 Threat Intelligence Dashboard</h3>
-        <p>Visualizzazione attacchi in tempo reale da log firewall. Top source IP, geo-localizzazione, timeline attacchi.</p>
-        <div class="badge-small">🔜 In arrivo</div>
+    <div class="section">
+        <h2>📫 Contatti</h2>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/claudia-maiello-689991201/" target="_blank">🔗 LinkedIn</a>
+            <a href="https://github.com/Lulinianalist" target="_blank">🐙 GitHub</a>
+            <a href="mailto:maiello.cybersecurity@gmail.com">✉️ Email</a>
+        </div>
     </div>
 
-    <h2>🛠 Competenze</h2>
-    <div class="skills">
-        <span class="skill">Wireshark</span>
-        <span class="skill">Python</span>
-        <span class="skill">Linux/iptables</span>
-        <span class="skill">TCP/IP</span>
-        <span class="skill">IDS/IPS</span>
-        <span class="skill">Log Analysis</span>
-    </div>
-
-        <div class="section">
-    <h2>📫 Contatti</h2>
-    <div class="contact-links">
-        <a href="https://www.linkedin.com/in/claudia-maiello-689991201/">🔗 LinkedIn</a>
-        <a href="https://github.com/Lulinianalist" target="_blank">🐙 GitHub</a>
-    </div>
-</div>
     <footer>
-        Portfolio in aggiornamento 🔥
+        📍 Portfolio in aggiornamento — nuovi progetti e simulazioni in arrivo
     </footer>
 </div>
 </body>
