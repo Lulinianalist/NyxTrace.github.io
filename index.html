@@ -11,15 +11,16 @@
         }
 
         body {
-            background: black;
-            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-            color: #e0e0e0;
+            background: #05050a;
+            font-family: 'Segoe UI', 'Courier New', monospace;
+            color: #e2e8f0;
             line-height: 1.6;
             padding: 2rem 1rem;
             position: relative;
             min-height: 100vh;
         }
 
+        /* Matrix notturno */
         #matrix-bg {
             position: fixed;
             top: 0;
@@ -27,7 +28,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            opacity: 0.25;
+            opacity: 0.2;
         }
 
         .container {
@@ -44,42 +45,45 @@
 
         h1 {
             font-size: 2.5rem;
-            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            background: linear-gradient(135deg, #cbd5e1, #38bdf8, #94a3b8);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin-bottom: 0.5rem;
-            border-bottom: 3px solid #ff3333;
+            border-bottom: 3px solid #dc2626;
             display: inline-block;
             padding-bottom: 0.3rem;
+            letter-spacing: 2px;
         }
 
         .badge {
             display: inline-block;
-            background: #00ff8822;
-            color: #00ff88;
-            border: 1px solid #00ff8844;
+            background: #1e293b66;
+            color: #94a3b8;
+            border: 1px solid #38bdf844;
             padding: 0.3rem 1rem;
             border-radius: 30px;
             font-size: 0.8rem;
             margin-top: 0.5rem;
+            backdrop-filter: blur(4px);
         }
 
         .section {
-            background: #111118cc;
+            background: #0f172acc;
             backdrop-filter: blur(5px);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2rem;
-            border: 1px solid #00ff8844;
+            border: 1px solid #1e293b;
         }
 
         .section h2 {
             font-size: 1.8rem;
-            color: #00ff88;
-            border-left: 4px solid #ff3333;
+            color: #38bdf8;
+            border-left: 4px solid #dc2626;
             padding-left: 1rem;
             margin-bottom: 1.5rem;
+            font-weight: 500;
         }
 
         .projects-grid {
@@ -89,29 +93,30 @@
         }
 
         .project-card {
-            background: #0d0d14cc;
+            background: #0f172a99;
             backdrop-filter: blur(4px);
             border-radius: 15px;
             padding: 1.5rem;
-            border: 1px solid #00ff8844;
+            border: 1px solid #1e293b;
             transition: transform 0.2s, border-color 0.2s;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: #ff3333;
+            border-color: #dc2626;
         }
 
         .project-card h3 {
             font-size: 1.3rem;
-            color: #00ff88;
+            color: #94a3b8;
             margin-bottom: 0.5rem;
-            border-left: 2px solid #ff3333;
+            border-left: 2px solid #dc2626;
             padding-left: 0.6rem;
         }
 
         .project-card p {
             margin: 0.5rem 0;
+            color: #cbd5e1;
         }
 
         .skills {
@@ -121,13 +126,14 @@
         }
 
         .skill {
-            background: #1a1a24cc;
+            background: #1e293b66;
             padding: 0.4rem 1rem;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 500;
-            color: #00ff88;
-            border: 1px solid #00ff8822;
+            color: #94a3b8;
+            border: 0.5px solid #38bdf844;
+            backdrop-filter: blur(2px);
         }
 
         .contact-links {
@@ -138,40 +144,44 @@
         }
 
         .contact-links a {
-            color: #e0e0e0;
+            color: #94a3b8;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
         }
 
         .contact-links a:hover {
-            color: #ff3333;
+            color: #dc2626;
+            background: #dc262611;
         }
 
         footer {
             text-align: center;
             margin-top: 2rem;
-            color: #6c757d;
-            font-size: 0.85rem;
+            color: #475569;
+            font-size: 0.8rem;
         }
 
         .status-badge {
             display: inline-block;
-            background: #00ff8822;
-            color: #00ff88;
+            background: #1e293b66;
+            color: #38bdf8;
             font-size: 0.7rem;
             padding: 0.2rem 0.6rem;
             border-radius: 20px;
             margin-top: 0.8rem;
+            border: 0.5px solid #38bdf844;
         }
 
         a {
-            color: #00ff88;
+            color: #94a3b8;
             text-decoration: none;
         }
 
         a:hover {
-            color: #ff3333;
+            color: #dc2626;
         }
 
         @media (max-width: 768px) {
@@ -187,8 +197,8 @@
 
     <div class="container">
         <header>
-            <h1>🛡️ Ciao, sono NyxTrace</h1>
-            <div class="badge">🔒 Cybersecurity Analyst | Network Security</div>
+            <h1>🌙 Ciao, sono NyxTrace</h1>
+            <div class="badge">🔒 Cybersecurity Analyst | Network Security | Threat Detection</div>
         </header>
 
         <div class="section">
@@ -197,13 +207,13 @@
                 <div class="project-card">
                     <h3>🛡️ Analisi SYN Flood (DoS)</h3>
                     <p>Analisi attacco DoS tramite flood di pacchetti SYN. Identificazione traffico malevolo, impatto sul server web e misure di mitigazione.</p>
-                    <a href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/syn-flood" target="_blank">🔗 Vedi progetto completo →</a>
+                    <a href="https://github.com/NyxTrace/NyxTrace.github.io/tree/main/progetti/syn-flood" target="_blank">🔗 Vedi progetto completo →</a>
                     <div class="status-badge">📌 Completato</div>
                 </div>
                 <div class="project-card">
                     <h3>📡 Analisi errore DNS (ICMP port unreachable)</h3>
                     <p>Analisi log tcpdump: client prova a contattare server DNS sulla porta 53, server risponde con ICMP "port unreachable".</p>
-                    <a href="https://github.com/Lulinianalist/Lulinianalist.github.io/tree/main/progetti/dns-icmp-error" target="_blank">🔗 Vedi progetto completo →</a>
+                    <a href="https://github.com/NyxTrace/NyxTrace.github.io/tree/main/progetti/dns-icmp-error" target="_blank">🔗 Vedi progetto completo →</a>
                     <div class="status-badge">📌 Completato</div>
                 </div>
             </div>
@@ -232,7 +242,7 @@
         </div>
 
         <footer>
-            🛡️ Portfolio in aggiornamento — nuovi progetti e threat analysis ogni settimana
+            🌙 NyxTrace — Portfolio in aggiornamento, nuove threat analysis in arrivo
         </footer>
     </div>
 
@@ -253,9 +263,9 @@
         }
 
         function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillStyle = 'rgba(5, 5, 10, 0.08)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#0f0';
+            ctx.fillStyle = '#1e3a8a';
             ctx.font = fontSize + 'px monospace';
 
             for (let i = 0; i < drops.length; i++) {
