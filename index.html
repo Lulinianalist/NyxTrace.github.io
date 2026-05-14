@@ -43,7 +43,7 @@
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             background: linear-gradient(135deg, #2563eb, #6b21a5);
             -webkit-background-clip: text;
             background-clip: text;
@@ -59,7 +59,6 @@
             display: inline-block;
             padding: 0.3rem 1rem;
             margin-top: 0.5rem;
-            letter-spacing: 1px;
         }
 
         .section {
@@ -68,7 +67,6 @@
             padding: 2rem;
             margin-bottom: 2rem;
             border: 1px solid #3b82f644;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .section h2 {
@@ -76,7 +74,6 @@
             border-left: 4px solid #dc2626;
             padding-left: 1rem;
             margin-bottom: 1.5rem;
-            font-size: 1.6rem;
         }
 
         .projects-grid {
@@ -101,7 +98,6 @@
         .project-card h3 {
             color: #60a5fa;
             margin-bottom: 0.5rem;
-            font-size: 1.3rem;
         }
 
         .skills {
@@ -115,7 +111,6 @@
             padding: 0.4rem 1rem;
             border-radius: 30px;
             font-size: 0.85rem;
-            font-weight: 500;
             color: #60a5fa;
             border: 1px solid #3b82f644;
         }
@@ -130,12 +125,11 @@
         .contact-links a {
             color: #e0e0e0;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
             background: #1a1a24cc;
             padding: 0.4rem 1rem;
             border-radius: 30px;
             border: 1px solid #3b82f644;
+            transition: 0.2s;
         }
 
         .contact-links a:hover {
@@ -160,131 +154,100 @@
             margin-top: 0.8rem;
         }
 
-        a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #dc2626;
-        }
-
         @media (max-width: 768px) {
             h1 { font-size: 1.8rem; }
-            .section { padding: 1.5rem; }
-            .section h2 { font-size: 1.3rem; }
+            .section { padding: 1rem; }
         }
     </style>
 </head>
 <body>
-
     <canvas id="matrix-bg"></canvas>
-
     <div class="container">
         <header>
             <div style="display: flex; align-items: center; gap: 12px; justify-content: center;">
                 <img src="https://raw.githubusercontent.com/Lulinianalist/NyxTrace.github.io/main/193f64fa4efa44f9bd295d18936fdf51.png" 
-                     alt="emote" 
-                     style="width: 40px; height: 40px; display: inline-block;">
-                <h1 style="display: inline-block; margin: 0;">Ciao, sono NyxTrace</h1>
+                     alt="emote" style="width: 40px; height: 40px;">
+                <h1 style="margin: 0;">Ciao, sono NyxTrace</h1>
             </div>
             <div class="sottotitolo">🔒 Cybersecurity Analyst | Network Security</div>
         </header>
 
         <div class="section">
-            <h2>📁 Progetti Cybersecurity</h2>
+            <h2>📁 Progetti</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>🛡️ Analisi SYN Flood (DoS)</h3>
-                    <p>Analisi attacco DoS tramite flood di pacchetti SYN. Identificazione traffico malevolo, impatto sul server web e misure di mitigazione.</p>
-                    <a href="https://github.com/NyxTrace/NyxTrace.github.io/tree/main/progetti/syn-flood" target="_blank">🔗 Vedi progetto completo →</a>
-                    <div class="status-badge">📌 Completato</div>
+                    <h3>🛡️ SYN Flood (DoS)</h3>
+                    <p>Analisi attacco DoS tramite flood SYN. Identificazione traffico malevolo, mitigazione.</p>
+                    <a href="/progetti/syn-flood/" target="_blank">🔗 Vedi progetto →</a>
+                    <div class="status-badge">✅ Completato</div>
                 </div>
                 <div class="project-card">
-                    <h3>📡 Analisi errore DNS (ICMP port unreachable)</h3>
-                    <p>Analisi log tcpdump: client prova a contattare server DNS sulla porta 53, server risponde con ICMP "port unreachable".</p>
-                    <a href="https://github.com/NyxTrace/NyxTrace.github.io/tree/main/progetti/dns-icmp-error" target="_blank">🔗 Vedi progetto completo →</a>
-                    <div class="status-badge">📌 Completato</div>
+                    <h3>📡 DNS + ICMP error</h3>
+                    <p>Analisi log tcpdump: porta 53 unreachable. Diagnostica completa.</p>
+                    <a href="/progetti/dns-icmp-error/" target="_blank">🔗 Vedi progetto →</a>
+                    <div class="status-badge">✅ Completato</div>
                 </div>
                 <div class="project-card">
-                    <h3>🍪 Attacco a sito web – Forza bruta + malware JS</h3>
-                    <p>Analisi attacco di forza bruta su pannello admin, iniezione JavaScript malevolo, download forzato e reindirizzamento a sito fasullo.</p>
-                    <a href="https://github.com/NyxTrace/NyxTrace.github.io/tree/main/progetti/forza-bruta-malware" target="_blank">🔗 Vedi progetto completo →</a>
-                    <div class="status-badge">📌 Completato</div>
+                    <h3>🍪 Forza bruta + malware</h3>
+                    <p>Attacco a sito web: forza bruta, JavaScript malevolo, reindirizzamento.</p>
+                    <a href="/progetti/forza-bruta-malware/" target="_blank">🔗 Vedi progetto →</a>
+                    <div class="status-badge">✅ Completato</div>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>🛠 Competenze Tecniche</h2>
+            <h2>🛠 Competenze</h2>
             <div class="skills">
-                <span class="skill">Python (Scapy, pandas)</span>
-                <span class="skill">IDS/IPS (Snort/Suricata)</span>
-                <span class="skill">Linux / iptables</span>
+                <span class="skill">Wireshark/tcpdump</span>
+                <span class="skill">Python</span>
+                <span class="skill">Linux/iptables</span>
+                <span class="skill">IDS/IPS</span>
                 <span class="skill">Log Analysis</span>
-                <span class="skill">TCP/IP, ICMP, HTTP</span>
+                <span class="skill">TCP/IP</span>
             </div>
         </div>
 
         <div class="section">
             <h2>📫 Contatti</h2>
             <div class="contact-links">
-                <a href="https://www.linkedin.com/in/claudia-maiello-689991201/" target="_blank">🔗 LinkedIn</a>
-                <a href="https://github.com/NyxTrace" target="_blank">🐙 GitHub</a>
-                <a href="mailto:maiello.cybersecurity@gmail.com">✉️ Email</a>
+                <a href="https://www.linkedin.com/in/claudia-maiello-689991201/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/NyxTrace" target="_blank">GitHub</a>
+                <a href="mailto:maiello.cybersecurity@gmail.com">Email</a>
             </div>
         </div>
-
-        <footer>
-            NyxTrace — Portfolio in aggiornamento
-        </footer>
+        <footer>NyxTrace — Portfolio in aggiornamento</footer>
     </div>
 
     <script>
         const canvas = document.getElementById('matrix-bg');
         const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
         resizeCanvas();
-
         const letters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         const fontSize = 14;
         let columns = Math.floor(canvas.width / fontSize);
         let drops = [];
-
         function initDrops() {
             columns = Math.floor(canvas.width / fontSize);
             drops = [];
-            for (let x = 0; x < columns; x++) {
-                drops[x] = Math.random() * -100;
-            }
+            for (let x = 0; x < columns; x++) drops[x] = Math.random() * -100;
         }
         initDrops();
-
         function draw() {
             ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = '#3b82f6';
             ctx.font = fontSize + 'px monospace';
-
             for (let i = 0; i < drops.length; i++) {
                 const text = letters[Math.floor(Math.random() * letters.length)];
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
                 drops[i]++;
             }
         }
-
         setInterval(draw, 35);
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-            initDrops();
-        });
+        window.addEventListener('resize', () => { resizeCanvas(); initDrops(); });
     </script>
 </body>
 </html>
